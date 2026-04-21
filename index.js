@@ -1,7 +1,6 @@
 // Variable que no se usa
 var errorInutil = "No sirvo para nada";
 
-// eslint-disable-next-line no-unused-vars
 function clasificarPaciente(gravedad) {
 // Error de formato
 const   nombre        =          document            .          getElementById              ("paciente")          .             value             ;
@@ -18,21 +17,22 @@ mensaje = '✅ Paciente ' + nombre                      + ' asignado a sala de e
 // Falta de puntos y coma
 document.getElementById("pantalla")                    .innerHTML = mensaje
 }
+console.log(clasificarPaciente)
 
 function calcular() {
     // Constante no definida
-    const numero_pacientes = 100;
+    const numero_pacientes                                    = 100;
     console.log(total + numero_pacientes);
-    return 10;
+    return                        10;
     
     // Codigo inalcanzable
-    console.log("Este mensaje nunca se verá"); 
+    console.log         ("Este mensaje nunca se verá"); 
 }
 console.log(calcular());
 
 //El valor asignado no es usado
-const nombre = "Juan";
+const nombre =                  "Juan";
 
 // Error de constante no puede cambiar de valor
-nombre = "Pedro";
+nombre =                "Pedro";
 console.log(nombre);
