@@ -1,23 +1,18 @@
-name: Control de Calidad DevOps
-
+name: Control de Calidad Python
 on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout del código
-        uses: actions/checkout@v3
-
-      - name: Instalar Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - name: Configurar Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '18'
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Ejecutar Linter y Prettier
-        run: |
-          npx prettier --check .
-          npx eslint .
+          python-version: '3.10'
+      - name: Instalar herramientas
+        run: pip install flake8 black
+      - name: Ejecutar Estilista (Black)
+        run: black --check .
+      - name: Ejecutar Escáner (Flake8)
+        run: flake8 .
